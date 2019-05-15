@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<title>XD's pizzaria</title>
+	<!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<nav class="topNav">
+		<span class="open-slide">
+			<a href="#" onclick="controlSlideMenu()">
+				<svg width = "30" height = "30">
+					<path d="M0,6 27,6" stroke="#fff" stroke-width="2"/>
+					<path d="M0,14 27,14" stroke="#fff" stroke-width="2"/>
+					<path d="M0,22 27,22" stroke="#fff" stroke-width="2"/>
+				</svg>
+			</a>
+		</span>
+		<a id="brand" href="#"><span style="font-size: 20px">XD's pizzaria</span></a>
+		<ul>
+			<li>
+				<a href="about.html">about</a>
+			</li>
+		</ul>
+	</nav>
+
+	<div id="side-menu" class="side-nav" style="width: 0px">
+		<a href="#">Pizzas</a>
+		<a href="#" id="fourUpgrade" onclick="fourUpgradeSection()">Four</a>
+		<a href="#">Apprenti</a>
+		<a href="#">Pizzaria</a>
+	</div>
+
+	<script type="text/javascript">
+		function controlSlideMenu(){
+			let sideMenu = document.getElementById('side-menu');
+			let main = document.getElementById('main');
+
+			console.log(sideMenu.style.width);
+			console.log(main.style.marginLeft)
+			if(sideMenu.style.width == '0px'){
+				sideMenu.style.width = '200px';
+				main.style.marginLeft = '200px';
+			}else{
+				sideMenu.style.width = '0';
+				main.style.marginLeft = '0';
+			}
+		}
+
+		function fourUpgradeSection(){
+			let fourUpgrade = document.getElementById("four");
+
+			if(fourUpgrade.style.display == "none"){
+				fourUpgrade.style.display = "initial";
+			}
+		}
+	</script>
+
+	<div id="main">
+
+		<section class="container">
+
+			<div id="milieu">
+				<div id = "credit"></div>
+				<div id = "commande"></div>
+				<div id="ingredientsDiv">
+					<button class="ingredient">Pâte</button>
+					<button class="ingredient">Sauce</button>
+					<button class="ingredient">Mozzarella</button>
+					<button class="ingredient">Pepperoni</button>
+					<button class="ingredient">Olives</button>
+					<button class="ingredient">Jambon</button>
+				</div>
+
+				<div id="submitPoubelle">
+					<button type="submit" id = "aufour">Au four!</button>
+					<button  id = "poubelle">Poubelle</button>
+				</div>
+
+				<div id="preparationDiv">
+					<div id="textPreparation">Préparation: </div>
+					<div id="preparation"></div>
+				</div>
+
+				<div id="cuissonProgressBar">
+					<div id="textCuisson">Cuisson:</div>
+					<div id="myProgress">
+						<div id="myBar"></div>
+					</div>
+				</div>
+
+				
+			</div>
+			
+		</section>
+
+		<section id="four" class="upgrades" style="display: none;">
+			<div id="fourUpgradeDiv">
+				<div><span style="font-weight: bold;">Accélératon du cuisson!</span></div>
+				<button id="fourUpgradeButton">50 euros</button>
+			</div>
+		</section>
+
+	</div>
+
+	<div id="notification" style="display: none">
+		Ceci est un div de notification!
+	</div>
+
+	<script type="text/javascript" src="monScript.js"></script>
+
+</body>
+</html>

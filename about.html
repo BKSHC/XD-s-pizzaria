@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>XD's pizzaria about</title>
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+	<nav class="topNav">
+		<span class="open-slide">
+			<a href="#" onclick="controlSlideMenu()">
+				<svg width = "30" height = "30">
+					<path d="M0,6 27,6" stroke="#fff" stroke-width="2"/>
+					<path d="M0,14 27,14" stroke="#fff" stroke-width="2"/>
+					<path d="M0,22 27,22" stroke="#fff" stroke-width="2"/>
+				</svg>
+			</a>
+		</span>
+		<a id="brand" href="index.html"><span style="font-size: 20px">XD's pizzaria</span></a>
+		<ul>
+			<li>
+				<a href="about.html">about</a>
+			</li>
+		</ul>
+	</nav>
+
+	<div id="side-menu" class="side-nav" style="width: 0px">
+		<a href="#">Home</a>
+		<a href="#">About</a>
+		<a href="#">Services</a>
+		<a href="#">Home</a>
+	</div>
+
+	<div id="main">
+
+	<script type="text/javascript">
+		function controlSlideMenu(){
+			let sideMenu = document.getElementById('side-menu');
+			let main = document.getElementById('main');
+
+			console.log(sideMenu.style.width);
+			console.log(main.style.marginLeft)
+			if(sideMenu.style.width == '0px'){
+				sideMenu.style.width = '250px';
+				main.style.marginLeft = '250px';
+			}else{
+				sideMenu.style.width = '0';
+				main.style.marginLeft = '0';
+			}
+		}
+	</script>
+
+	<main>
+		<p>This is a about page!!!</p>
+	</main>
+
+</body>
+</html>
